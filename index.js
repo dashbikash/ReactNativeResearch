@@ -1,9 +1,29 @@
-/**
- * @format
- */
+import { AppRegistry } from 'react-native';
+import App from './src/App';
+import { name as appName } from './app.json';
+import { PaperProvider, MD2LightTheme as DefaultTheme, MD2DarkTheme } from 'react-native-paper';
 
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
+const themeLight = {
+    ...DefaultTheme,
+    colors: {
+        ...DefaultTheme.colors,
+        primary: '#009688',
+    }
+};
+const themeDark = {
+    ...MD2DarkTheme,
+    colors: {
+        ...MD2DarkTheme.colors,
+        primary: '#009688',
+    }
+};
 
-AppRegistry.registerComponent(appName, () => App);
+export const main = () => {
+    return (
+        <PaperProvider theme={themeLight}>
+            <App />
+        </PaperProvider>
+    );
+}
+
+AppRegistry.registerComponent(appName, () => main);

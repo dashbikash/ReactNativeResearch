@@ -7,14 +7,15 @@ const themeLight = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
-        primary: '#009688',
+        primary: '#2196F3',
     }
 };
 const themeDark = {
     ...MD2DarkTheme,
     colors: {
         ...MD2DarkTheme.colors,
-        primary: '#009688',
+        primary: '#2196F3',
+
     }
 };
 

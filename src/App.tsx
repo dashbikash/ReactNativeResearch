@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from './core/components/components';
 import SignIn from './core/pages/SignIn';
 import HomeTabs from './core/pages/HomeTabs';
+import ItemDetails from './core/pages/ItemDetails';
 
 
 const Stack = createNativeStackNavigator();
@@ -41,18 +42,12 @@ const App = () =>{
       <Stack.Navigator>
         {userToken == null ? (
           // No token found, user isn't signed in
-          <Stack.Screen
-            name="SignIn"
-            component={SignIn}
-            options={{
-              title: 'Sign in'
-            }}
-            initialParams={{ setUserToken }}
-            
-          />
+          <Stack.Screen name="SignIn" component={SignIn} options={{headerShown:false}} initialParams={{ setUserToken }} />
         ) : (
           // User is signed in
-          <Stack.Screen name="HomeTabs" component={HomeTabs} options={{headerShown:false}} />
+          <>          
+            <Stack.Screen name="HomeTabs" component={HomeTabs} options={{headerShown:false}} />
+          </> 
         )}
       </Stack.Navigator>
     </NavigationContainer>

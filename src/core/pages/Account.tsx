@@ -8,8 +8,6 @@ const Account = () => {
     <View>
       <Appbar.Header>
         <Appbar.Content title={user} />
-        <Appbar.Action icon="calendar" onPress={() => {}} />
-        <Appbar.Action icon="magnify" onPress={() => {}} />
     </Appbar.Header>
       <Text>Account</Text>
     </View>

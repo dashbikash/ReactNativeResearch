@@ -30,7 +30,7 @@ const ItemDetails = ({ route, navigation }: { route: any, navigation: any }) => 
     <View style={{ height: '100%' }}>
       <Appbar.Header>
         <Appbar.BackAction onPress={() => navigation.goBack()} />
-        <Appbar.Content title={item.title} />
+        <Appbar.Content title={item["name"]} />
       </Appbar.Header>
       <Card style={styles.card} mode='elevated'>
         {Object.keys(item).map(key => {
@@ -46,10 +46,11 @@ const ItemDetails = ({ route, navigation }: { route: any, navigation: any }) => 
           )
         })}
       </Card>
+      
       <FAB
         icon="check"
         style={styles.fab}
-        label='Proceed'
+        label='Start Billing'
         onPress={() => console.log('Pressed')}
       />
     </View>

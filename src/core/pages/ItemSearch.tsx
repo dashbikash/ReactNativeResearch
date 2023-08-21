@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { ScrollView, View } from 'react-native';
-import { Appbar, List, Searchbar } from 'react-native-paper';
+import { Appbar, Button, Divider, List, Menu, Searchbar } from 'react-native-paper';
 import ItemDetails from './ItemDetails';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SplashScreen from '../components/components';
+import {ListView, SplashScreen} from '../components/components';
 
 
 const SearchStack = createNativeStackNavigator();
@@ -16,9 +16,9 @@ const Search = ({ navigation }: { navigation: any }) => {
 
   const searchItems = (e: any) => {
 
-    setSearchQuery(e.trim())
+    setSearchQuery(e)
     if (searchQuery.length > 0) {
-      setViewItems(items.filter((item: any) => item["title"].toLowerCase().includes(searchQuery.toLowerCase())))
+      setViewItems(items.filter((item: any) => item["name"].toLowerCase().includes(searchQuery.trim().toLowerCase())))
     } else {
       setViewItems(items)
     }
@@ -26,11 +26,11 @@ const Search = ({ navigation }: { navigation: any }) => {
   }
 
   const loadItems = async () => {
-    fetch('https://dummyjson.com/products')
+    fetch('https://64e3c91dbac46e480e793085.mockapi.io/customers')
       .then(res => res.json().then(data => {
         console.log(data);
-        setItems(data["products"]);
-        setViewItems(data["products"])
+        setItems(data);
+        setViewItems(data)
         setIsLoading(false)
       }
 
@@ -43,24 +43,31 @@ const Search = ({ navigation }: { navigation: any }) => {
 
   return (
     <View style={{ height: '100%' }}>
-      <Appbar.Header>
-        <Searchbar mode='view'
+      <Searchbar mode='view'
           placeholder="Search"
           onChangeText={searchItems}
-          value={searchQuery} />
-      </Appbar.Header>
+          onClearIconPress={()=>{setViewItems(items)}}
+          value={searchQuery}
+          style={{ display: 'flex', width: '100%' }}
+        />
+
       {isLoading ? (
         <SplashScreen />
 
       ) : (
         <ScrollView>
+          
           <List.Section >
             {
               viewItems &&
-              viewItems.map((item) => <List.Item key={item["id"]}
-                title={item["title"]} onPress={(e) => { navigation.navigate("Details", { item: item }) }} />)
+              viewItems.map((item,index) => <List.Item key={item["id"]}
+                title={item["name"]+ "("+item["customerId"]+")"} 
+                description={item["address"]}
+                style={{backgroundColor:index%2!=0?"lightblue":"white"}}
+                onPress={(e) => { navigation.navigate("Details", { item: item }) }} />)
             }
           </List.Section>
+          
         </ScrollView>
       )}
     </View>

@@ -8,6 +8,8 @@ const themeLight = {
     colors: {
         ...DefaultTheme.colors,
         primary: '#2196F3',
+        primaryText: '#212121',
+        secondaryText:'#757575'
     }
 };
 const themeDark = {

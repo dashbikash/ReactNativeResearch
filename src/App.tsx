@@ -2,10 +2,10 @@ import * as React from 'react';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {  adaptNavigationTheme } from 'react-native-paper';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SplashScreen from './core/components/components';
+import {SplashScreen} from './core/components/components';
 import SignIn from './core/pages/SignIn';
 import HomeTabs from './core/pages/HomeTabs';
-import ItemDetails from './core/pages/ItemDetails';
+import AuthUser from './core/models';
 
 
 const Stack = createNativeStackNavigator();
@@ -15,14 +15,13 @@ const { LightTheme } = adaptNavigationTheme({reactNavigationLight :DefaultTheme}
 
 const App = () =>{
   const [isLoading, setIsLoading] = React.useState(true);
-  const [userToken, setUserToken] = React.useState(null);
-
+  const [userToken, setUserToken] = React.useState<AuthUser|null>();
+  
   const getAuthUser = async () => {
     const sleep = (ms:number) => new Promise((r) => setTimeout(r, ms));
     try {
       await sleep(500);
-      const token = null;
-      setUserToken(token);
+      setUserToken(null);
     } finally {
       setIsLoading(false);
     }

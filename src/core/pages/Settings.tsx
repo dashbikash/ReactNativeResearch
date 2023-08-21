@@ -1,7 +1,6 @@
 import { View, } from 'react-native'
 import React from 'react'
-import { ActivityIndicator, Appbar, List, Text } from 'react-native-paper'
-import SplashScreen from '../components/components'
+import { Appbar, List, Text } from 'react-native-paper'
 
 const Settings = () => {
   const listItemOnPressOut=(e:any)=>{
@@ -15,7 +14,6 @@ const Settings = () => {
       <List.Section >
         <List.Item title="Item 1" onPressOut={listItemOnPressOut} />
       </List.Section>
-      <SplashScreen/>
     </View>
   )
 }

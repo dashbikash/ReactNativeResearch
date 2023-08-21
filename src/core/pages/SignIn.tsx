@@ -1,14 +1,15 @@
 import * as React from "react";
 import { Image, ToastAndroid, View } from "react-native";
 import { Button, Card, TextInput } from "react-native-paper";
+import AuthUser from "../models";
 
 
 function SignIn({ navigation, route }: { navigation: any, route: any }) {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const { setUserToken } = route.params;
-
-
+  const dummyUser:AuthUser={username:"guest",fullname:"guest",role:"guest",otherdata:{}}
+  setUserToken(dummyUser)
   const signInOnPress = (e: any) => {
     if (username.trim().toLocaleLowerCase() === "guest" && password === "1234") {
       setUserToken(username);

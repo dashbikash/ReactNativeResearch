@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { ScrollView, View } from 'react-native';
 import { Appbar, Button, Divider, List, Menu, Searchbar } from 'react-native-paper';
-import ItemDetails from './ItemDetails';
+import ItemDetails from '../core/pages/ItemDetails';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {ListView, SplashScreen} from '../components/components';
+import {ListView, SplashScreen} from '../core/components/components';
 
 
 const SearchStack = createNativeStackNavigator();
@@ -77,15 +77,15 @@ const Search = ({ navigation }: { navigation: any }) => {
 
 
 
-export const ItemSearch = () => {
+export const MyItemSearch = () => {
   return (
     <SearchStack.Navigator>
       <SearchStack.Screen name="Search" component={Search} options={{ headerShown: false }} />
 
-      <SearchStack.Screen name="Details" component={ItemDetails} options={{ headerShown: false }} />
+      
     </SearchStack.Navigator>
   )
 }
 
 
-export default ItemSearch;
+export default MyItemSearch;

@@ -11,8 +11,8 @@ const ItemDetails = ({ route, navigation }: { route: any, navigation: any }) => 
   const { colors } = useTheme();
   const styles = StyleSheet.create({
     card: {
-      margin: 10,
-      padding: 10,
+      margin: 16,
+      padding: 16,
     },
     textHeader: { color: colors.primary, fontWeight: "bold" },
     fab: {
@@ -51,7 +51,7 @@ const ItemDetails = ({ route, navigation }: { route: any, navigation: any }) => 
         icon="check"
         style={styles.fab}
         label='Start Billing'
-        onPress={() => console.log('Pressed')}
+        onPress={() => navigation.navigate("Reading")}
       />
     </View>
   )

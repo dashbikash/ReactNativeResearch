@@ -23,7 +23,7 @@ const items=props["items"]
         items.map((item:any) => <List.Item key={item["id"]}
           title={item["title"]}
           description={item["description"]}
-          onPress={onItemPress}
+          onPress={(e:any)=>{onItemPress(e,item)}}
         />)
       }
     </List.Section>

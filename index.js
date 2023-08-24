@@ -7,21 +7,21 @@ const themeLight = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
-        primary: '#2196F3',
-        primaryText: '#212121',
-        secondaryText:'#757575'
+        primary: '#009688',
     }
 };
 const themeDark = {
     ...MD2DarkTheme,
     colors: {
         ...MD2DarkTheme.colors,
-        primary: '#2196F3',
+        primary: '#009688',
 
     }
 };
 
 export const main = () => {
+    
+
     return (
         <PaperProvider theme={themeLight}>
             <App />

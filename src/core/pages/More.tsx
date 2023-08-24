@@ -1,11 +1,23 @@
 import React from 'react'
 import { View } from 'react-native'
-import { Text } from 'react-native-paper'
+import { Appbar, Text } from 'react-native-paper'
+import MyCrypto from '../../experiment/MyCrypto'
+import { MyDocPicker } from '../../experiment/MyDocPicker'
+import MyFileSystem from '../../experiment/MyFileSystem'
+import MyPermissions from '../../experiment/MyPermissions'
+import { MyMsgpackPicker } from '../../experiment/MyMsgpackPicker'
 
 const More = () => {
   return (
     <View>
-      <Text>More</Text>
+      <Appbar.Header>
+        <Appbar.Content title="More" />
+      </Appbar.Header>
+      <MyPermissions />
+      <MyFileSystem />
+      <MyDocPicker />
+      <MyMsgpackPicker/>
+      <MyCrypto />
     </View>
   )
 }

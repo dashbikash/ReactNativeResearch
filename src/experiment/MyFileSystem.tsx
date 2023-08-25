@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { PermissionsAndroid, Platform } from 'react-native';
 import RNFS from 'react-native-fs';
-import { Button, Text } from 'react-native-paper';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Button, View } from 'react-native';
+import { Text } from 'react-native-paper';
 
 // ...
 
@@ -20,15 +19,13 @@ export function MyFileSystem() {
         setExternalDirectory(RNFS.ExternalDirectoryPath);
         setDocumentsFolder(RNFS.DocumentDirectoryPath);
 
-
-
     }, []);
     return (
-        <SafeAreaView>
+        <View>
             <Text>Downloads Folder: {downloadsFolder}</Text>
             <Text>Documents folder: {documentsFolder}</Text>
             <Text>External storage: {externalDirectory}</Text>
-            <Button onPressOut={(e) => {
+            <Button title="Create Dirs" onPress={(e) => {
                 RNFS.exists(downloadsFolder + "/MyImages").then((result) => {
                     console.log(result)
                     if (!result) {
@@ -37,8 +34,8 @@ export function MyFileSystem() {
                         })
                     }
                 })
-            }}>Create Dir </Button>
-        </SafeAreaView>
+            }}/>
+        </View>
     );
 }
 

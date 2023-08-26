@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'react-native'
+import { Button, View } from 'react-native'
 import { Appbar, Text } from 'react-native-paper'
 import MyCrypto from './MyCrypto'
 import { MyDocPicker } from './MyDocPicker'
@@ -9,7 +9,7 @@ import { MyMsgpackPicker } from './MyMsgpackPicker'
 import DemoLocation from './DemoLocation'
 import { DemoNativeSqlite } from './DemoNativeSqlite'
 
-const ExperimentsPage = () => {
+const ExperimentsPage = ({navigation}:{navigation: any}) => {
   return (
     <View>
       <Appbar.Header>
@@ -22,6 +22,7 @@ const ExperimentsPage = () => {
       <MyCrypto />
       <DemoLocation />
       <DemoNativeSqlite />
+      <Button title='Camera' onPress={(e:any)=>{navigation.navigate('Camera')}} />
     </View>
   )
 }

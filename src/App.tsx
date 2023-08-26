@@ -6,7 +6,7 @@ import {SplashScreen} from './core/components/components';
 import SignIn from './core/pages/SignIn';
 import HomeTabs from './core/pages/HomeTabs';
 import AuthUser from './core/models';
-import MyCamera from './experiment/MyCamera';
+import {DemoCamera} from './experiment/DemoCamera';
 import ItemDetails from './core/pages/ItemDetails';
 import { BillInput } from './billing/pages/BillInput';
 
@@ -50,7 +50,7 @@ const App = () =>{
           <>          
             <Stack.Screen name="HomeTabs" component={HomeTabs} options={{headerShown:false}} />
             <Stack.Screen name="Details" component={ItemDetails} options={{ headerShown: false }} />
-            <Stack.Screen name="Camera" component={MyCamera} options={{headerShown:false}} />
+            <Stack.Screen name="Camera" component={DemoCamera} options={{headerShown:false}} />
             <Stack.Screen name="Reading" component={BillInput} />
           </> 
         )}

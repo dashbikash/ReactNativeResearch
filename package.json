@@ -1,5 +1,5 @@
 {
-  "name": "BasicHybridApp",
+  "name": "reactnativeresearch",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -16,8 +16,6 @@
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
     "@types/crypto-js": "^4.1.1",
-    "@types/react-native-fs": "^2.13.0",
-    "@types/react-native-permissions": "^2.0.0",
     "@types/uuid": "^9.0.2",
     "buffer": "^6.0.3",
     "crypto-js": "^4.1.1",

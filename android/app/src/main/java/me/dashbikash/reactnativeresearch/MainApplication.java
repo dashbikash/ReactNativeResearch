@@ -1,4 +1,4 @@
-package com.basichybridapp;
+package me.dashbikash.reactnativeresearch;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

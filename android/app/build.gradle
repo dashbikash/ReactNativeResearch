@@ -73,9 +73,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.basichybridapp"
+    namespace "me.dashbikash.reactnativeresearch"
     defaultConfig {
-        applicationId "com.basichybridapp"
+        applicationId "me.dashbikash.reactnativeresearch"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

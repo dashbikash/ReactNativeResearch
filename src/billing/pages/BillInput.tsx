@@ -65,7 +65,7 @@ export const BillInput = ({ route, navigation }: { route: any, navigation: any }
                     </Picker>
                 </Card.Content>
             </Card>
-            <Button style={{marginTop:5}} mode='contained' onPressOut={(e)=>{checkPermissions}}>Submit</Button>
+            <Button style={{marginTop:5}} mode='contained' onPressOut={(e)=>{navigation.navigate("Confirm")}}>Submit</Button>
         </View>
     )
 }

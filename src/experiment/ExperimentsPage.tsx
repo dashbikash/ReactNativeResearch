@@ -24,7 +24,7 @@ const ExperimentsPage = ({navigation}:{navigation: any}) => {
     <>
     
     <Stack.Navigator>
-      <Stack.Screen name="Experiment" component={PageContents} options={{headerRight:()=>(<Button onPress={() => navigation.navigate("HomeTabs")} title="Home" />)}} />
+      <Stack.Screen name="Experiment" component={PageContents} options={{headerRight:()=>(<Button onPress={() => navigation.navigate("HomeTabs")} title="App" />)}} />
       <Stack.Screen name="Camera" component={DemoCamera} options={{headerShown:false}} />
       <Stack.Screen name="PhotoControl" component={DemoPhotoControl}  />
       <Stack.Screen name="FileSystem" component={DemoFileSystem}  />

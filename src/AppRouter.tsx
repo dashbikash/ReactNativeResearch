@@ -10,22 +10,25 @@ import {DemoCamera} from './experiment/DemoCamera';
 import ItemDetails from './core/pages/ItemDetails';
 import { BillInput } from './billing/pages/BillInput';
 import ExperimentsPage from './experiment/ExperimentsPage';
+import { ConfirmInput } from './billing/pages/ConfirmInput';
 
 
 const Stack = createNativeStackNavigator();
 
 
-const MyTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: '#0050EF',
-  },
-};
+
 
 
 
 const AppRouter = () =>{
+  const MyTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: '#D32F2F',
+    },
+  };
+
   
   const [isLoading, setIsLoading] = React.useState(true);
   const [userToken, setUserToken] = React.useState<AuthUser|null>();
@@ -63,6 +66,7 @@ const AppRouter = () =>{
             <Stack.Screen name="HomeTabs" component={HomeTabs} options={{headerShown:false}} />
             <Stack.Screen name="Details" component={ItemDetails} options={{ headerShown: false }} />
             <Stack.Screen name="Reading" component={BillInput} />
+            <Stack.Screen name="Confirm" component={ConfirmInput} />
             
           </> 
         )}

@@ -5,7 +5,7 @@ import { Button, Card, Text, TextInput } from 'react-native-paper';
 
 
 
-export const ConfirmInput = () => {
+export const ConfirmInput = ({ route, navigation }: { route: any, navigation: any }) => {
     const [photo, setPhoto] = React.useState("");
     const [status, setStatus] = React.useState("");
     const [reading, setReading] = React.useState("");
@@ -32,7 +32,7 @@ export const ConfirmInput = () => {
                     <Text>{remark}</Text>
                 </Card.Content>
             </Card>
-            <Button style={{marginTop:5}} mode='contained' onPressOut={(e)=>{console.log(e)}}>Confirm and Save</Button>
+            <Button style={{marginTop:5}} mode='contained' onPressOut={(e)=>{navigation.navigate("Home")}}>Confirm and Save</Button>
         </View>
     )
 }

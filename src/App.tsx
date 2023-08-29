@@ -9,7 +9,7 @@ const themeLight = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
-        primary: '#0050EF',
+        primary: '#D32F2F',
     }
 };
 
@@ -17,7 +17,7 @@ const themeDark = {
     ...MD2DarkTheme,
     colors: {
         ...MD2DarkTheme.colors,
-        primary: '#009688',
+        primary: '#D32F2F88',
     }
 };
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FlatList, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { FlatList, SafeAreaView, Text, View } from 'react-native';
 import { Card, Searchbar, TouchableRipple, useTheme } from 'react-native-paper';
 import { SplashScreen } from '../components/components';
 import Icon from 'react-native-vector-icons/FontAwesome6';
@@ -41,24 +41,26 @@ const ItemSearchV2 = ({ navigation }: { navigation: any }) => {
 
   return (
     <View style={{ height: '100%', display: 'flex' }}>
-      <Searchbar mode='view'
-        placeholder="Search"
-        onChangeText={searchItems}
-        onClearIconPress={() => { setViewItems(items) }}
-        value={searchQuery}
-        style={{ margin: 5 }}
-      />
+        <Searchbar
+          mode='bar'
+          placeholder="Enter to Search"
+          onChangeText={searchItems}
+          onClearIconPress={() => { setViewItems(items) }}
+          value={searchQuery}
+          style={{ margin: 5, borderColor: "silver",borderWidth:1,elevation:5 }}
+        />
+
 
       {isLoading ? (
         <SplashScreen />
 
       ) : (
-        <SafeAreaView style={{flex:1 }}>
+        <SafeAreaView style={{ flex: 1 }}>
           <FlatList
             data={viewItems}
             renderItem={({ item }) =>
 
-              <TouchableRipple borderless style={{ margin: 5, borderRadius:5,elevation:2 }} onPress={(e) => { navigation.navigate("Details", { item: item }) }} rippleColor="rgba(0, 0, 0, .25)">
+              <TouchableRipple borderless style={{ margin: 5, borderRadius: 5, elevation: 2 }} onPress={(e) => { navigation.navigate("Details", { item: item }) }} rippleColor="rgba(0, 0, 0, .25)">
                 <Card >
                   <Card.Content >
                     <>

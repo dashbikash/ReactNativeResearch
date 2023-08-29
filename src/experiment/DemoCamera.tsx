@@ -15,6 +15,7 @@ export function DemoCamera({navigation}:{navigation:any}) {
   const camera = useRef<Camera>(null);
   const devices = useCameraDevices();
   const device = devices.back;
+  const picturesDirectoryPath=RNFS.PicturesDirectoryPath + "/RNResearch"
 
   const [showCamera, setShowCamera] = useState(false);
   const [imageSource, setImageSource] = useState('');
@@ -38,14 +39,15 @@ export function DemoCamera({navigation}:{navigation:any}) {
     }
   };
   const btnOkOnPress=(e:any)=>{
-    RNFS.exists(RNFS.PicturesDirectoryPath + "/MyImages").then((result) => {
+    RNFS.exists(picturesDirectoryPath).then((result) => {
       if (!result) {
-          RNFS.mkdir(RNFS.PicturesDirectoryPath + "/MyImages").catch((err)=>{
+          RNFS.mkdir(picturesDirectoryPath).catch((err)=>{
               console.log(err)
           })
       }
-
-      RNFS.copyFile(imageSource,RNFS.PicturesDirectoryPath + "/MyImages/BIK_"+uuidv4()+".jpg")
+      var timestamp=Math.floor(new Date().getTime()/1000)
+      
+      RNFS.copyFile(imageSource,picturesDirectoryPath + `/BPD_${timestamp}.jpg`)
       .then(()=>{
         navigation.goBack()
       })

@@ -2,7 +2,7 @@ import { View, Text, Button } from 'react-native'
 import React from 'react'
 import {  AesCBCPkcs7Decrypt,AesCBCPkcs7Encrypt } from "../core/utils/crypto";
 
-const MyCrypto = () => {
+const DemoAuth = () => {
 
   const doPress = (e: any) => {
     let enc=AesCBCPkcs7Encrypt("Hello World")
@@ -19,4 +19,4 @@ const MyCrypto = () => {
   )
 }
 
-export default MyCrypto
+export default DemoAuth;

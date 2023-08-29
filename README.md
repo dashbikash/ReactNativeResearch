@@ -77,3 +77,10 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+# Opensource Packages Used
+- npm install realm @realm/react
+- npm install react-native-sqlite-storage @types/react-native-sqlite-storage
+- npm install react-native-root-toast
+- npm install react-native-mmkv
+- npm install react-native-device-info

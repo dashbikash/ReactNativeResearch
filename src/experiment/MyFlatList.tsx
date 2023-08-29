@@ -5,7 +5,6 @@ import {
   Text,
 } from 'react-native';
 import { Button, Card, useTheme } from 'react-native-paper';
-import Ripple from "react-native-material-ripple";
 import Icon from 'react-native-vector-icons/FontAwesome6';
 
 
@@ -49,15 +48,13 @@ const MyFlatList = () => {
       <FlatList
         data={DATA}
         renderItem={({item}) => 
-            <Ripple style={{margin:5}}   onPress={(e:any)=>(console.log(item))} >
                 <Card mode='outlined' style={{backgroundColor:'lightblue'}}>
                     <Card.Content>
                         <Text style={{color:colors.primary,fontSize:18,fontWeight:'bold'}}>{item["title"]+" "}{item["category"]=='B' ? (<Icon color="green" name='circle-check'/>):''}</Text>
                         <Text style={{color:"black"}}>{item["description"]}</Text>
                         <Text style={{color:"gray"}}>{item["category"]}</Text>
                     </Card.Content>                    
-                </Card>                
-            </Ripple>
+                </Card> 
         }
         keyExtractor={item => item.id}
       />

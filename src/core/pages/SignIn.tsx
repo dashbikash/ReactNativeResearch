@@ -1,7 +1,8 @@
 import * as React from "react";
-import { Image, ToastAndroid, View } from "react-native";
+import { Image, View } from "react-native";
 import { Button, Card, TextInput } from "react-native-paper";
 import AuthUser from "../models";
+import Toast from "react-native-root-toast";
 
 
 function SignIn({ navigation, route }: { navigation: any, route: any }) {
@@ -9,12 +10,21 @@ function SignIn({ navigation, route }: { navigation: any, route: any }) {
   const [password, setPassword] = React.useState("");
   const { setUserToken } = route.params;
   const dummyUser:AuthUser={username:"guest",fullname:"guest",role:"guest",otherdata:{}}
+  
   setUserToken(dummyUser)
+  
   const signInOnPress = (e: any) => {
     if (username.trim().toLocaleLowerCase() === "guest" && password === "1234") {
       setUserToken(username);
     }else{
-      ToastAndroid.show('Invalid credentials', ToastAndroid.SHORT);
+      Toast.show("Invalid Credentials", {
+        duration: Toast.durations.SHORT,
+        position: Toast.positions.BOTTOM,
+        shadow: true,
+        animation: true,
+        hideOnPress: true,
+        delay: 0
+      });
     }
 
   }

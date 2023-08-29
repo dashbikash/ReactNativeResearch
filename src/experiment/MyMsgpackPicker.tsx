@@ -25,7 +25,7 @@ export const MyMsgpackPicker = () => {
     }
     return (
         <SafeAreaView >
-            <Button title="Select DAT File" onPress={onPress} />
+            <Button title="Select DAT(Msgpack) File" onPress={onPress} />
 
         </SafeAreaView>
     );

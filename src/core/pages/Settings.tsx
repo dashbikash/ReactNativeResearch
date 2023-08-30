@@ -10,6 +10,7 @@ const Settings = ({ route, navigation }: { route: any, navigation: any }) => {
     <View style={{ height: '100%' }}>
       <Appbar.Header>
         <Appbar.Content title="Settings" />
+        <Appbar.Action icon='react' onPressOut={navigation.navigate("Experiment")}/>
       </Appbar.Header>
       
       

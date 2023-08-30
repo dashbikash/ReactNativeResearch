@@ -59,11 +59,12 @@ const AppRouter = () =>{
           ) : (
           // User is signed in
           <>
-            <Stack.Screen name="Experiment" component={ExperimentsPage} options={{ headerShown: false }}/>          
+                    
             <Stack.Screen name="HomeTabs" component={HomeTabs} options={{headerShown:false}} />
             <Stack.Screen name="Details" component={ItemDetails} options={{ headerShown: false }} />
             <Stack.Screen name="Reading" component={BillInput} />
             <Stack.Screen name="Confirm" component={ConfirmInput} />
+	    <Stack.Screen name="Experiment" component={ExperimentsPage} options={{ headerShown: false }}/>  
             
           </> 
         )}

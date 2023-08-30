@@ -12,7 +12,7 @@ function SignIn({ navigation, route }: { navigation: any, route: any }) {
   const { setUserToken } = route.params;
   const dummyUser:AuthUser={username:"guest",fullname:"guest",role:"guest",otherdata:{}}
   
-  setUserToken(dummyUser)
+  //setUserToken(dummyUser)
   
   const signInOnPress = (e: any) => {
     if (username.trim().toLocaleLowerCase() === "guest" && password === "1234") {

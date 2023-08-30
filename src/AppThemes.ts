@@ -6,10 +6,21 @@ export const defaultTheme = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
-        primary: '#0336ff',
-        secondary: '#E91E63',
-        tertiary: 'orange',
+        primary: '#1976D2',
+        secondary: '#009688',
+        accent: '#FFB74D',
         background: 'white',
+        // surface: string;        
+        // error: string;
+        text: 'black',
+        // onSurface: string;
+        // disabled: string;
+        // placeholder: string;
+        // backdrop: string;
+        // notification: string;
+        // tooltip: string;
+        
+        
     },
 };
 

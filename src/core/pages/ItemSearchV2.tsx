@@ -3,6 +3,7 @@ import { FlatList, SafeAreaView, Text, View } from 'react-native';
 import { Card, Searchbar, TouchableRipple, useTheme } from 'react-native-paper';
 import { SplashScreen } from '../components/components';
 import Icon from 'react-native-vector-icons/FontAwesome6';
+import Toast from 'react-native-root-toast';
 
 
 
@@ -60,12 +61,12 @@ const ItemSearchV2 = ({ navigation }: { navigation: any }) => {
             data={viewItems}
             renderItem={({ item }) =>
 
-              <TouchableRipple borderless style={{ margin: 5, borderRadius: 12, elevation: 2 }} onPress={(e) => { navigation.navigate("Details", { item: item }) }} rippleColor="rgba(0, 0, 0, .25)">
+              <TouchableRipple borderless style={{ margin: 5, borderRadius: 12, elevation: 2 }} onPress={(e) => { navigation.navigate("Details", { item: item }) }} onLongPress={(e:any)=>{Toast.show("Long Pressed")}} rippleColor="rgba(0, 0, 0, .25)">
                 <Card >
                   <Card.Content >
                     <>
                       <Text style={{ color: colors.primary, fontSize: 16, fontWeight: 'bold' }}>{item["name"] + " "}{item["alive"] ? (<Icon color="green" name='circle-check' />) : ('')}</Text>
-                      <Text style={{ color: 'black', fontSize: 16 }}>{item["areaCode"]}</Text>
+                      <Text style={{ color: colors.secondary, fontSize: 16 }}>{item["areaCode"]}</Text>
                       <Text style={{ color: 'gray', fontSize: 14 }}>{item["address"]}</Text>
                       <Text style={{ color: 'orange', fontSize: 10 }}>{new Date(item["updatedAt"]).toDateString()}</Text>
                     </>

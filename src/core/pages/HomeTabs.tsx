@@ -1,30 +1,28 @@
 import * as React from 'react';
 import { useTheme } from 'react-native-paper';
-import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navigation';
 import Account from './Account';
 import ItemSearchV2 from './ItemSearchV2';
-import ExperimentsPage from '../../experiment/ExperimentsPage';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import FontAwesome from "react-native-vector-icons/FontAwesome6";
+import IconFA from "react-native-vector-icons/FontAwesome6";
 import Settings from './Settings';
 
 const Tab = createBottomTabNavigator();
 
 function HomeTabs() {
-  const theme = useTheme()
+  
   return (
     <Tab.Navigator screenOptions={{headerShown:false,tabBarItemStyle :{padding:5},tabBarStyle:{height:50,borderTopColor:'lightgray',borderTopWidth:0.75}}}>
       <Tab.Screen name="Home" component={ItemSearchV2} options={{
         tabBarIcon: ({ color, size }) => (
-          <FontAwesome name="money-bill-1" color={color} size={size-5} />
+          <IconFA name="money-bill-1" color={color} size={size-5} />
         ), tabBarLabel: "Billing",
         headerShown:false
       }} />
       <Tab.Screen name="Account" component={Account} options={{ tabBarIcon: ({ color, size }) => (
-          <FontAwesome name="user-circle" color={color} size={size-5} />
+          <IconFA name="user-circle" color={color} size={size-5} />
         ), tabBarLabel: "Account" }} />
       <Tab.Screen name="Settings" component={Settings} options={{ tabBarIcon: ({ color, size }) => (
-        <FontAwesome name="gear" color={color} size={size-5} />
+        <IconFA name="gear" color={color} size={size-5} />
       ), tabBarLabel: "Settings" }} />
     </Tab.Navigator>
   );

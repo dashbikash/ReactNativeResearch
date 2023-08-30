@@ -2,31 +2,16 @@ import * as React from 'react';
 
 import AppRouter from './AppRouter';
 
-import { PaperProvider, MD2LightTheme as DefaultTheme, MD2DarkTheme } from 'react-native-paper';
+import { PaperProvider } from 'react-native-paper';
 import { RootSiblingParent } from 'react-native-root-siblings';
-
-const themeLight = {
-    ...DefaultTheme,
-    colors: {
-        ...DefaultTheme.colors,
-        primary: '#D32F2F',
-    }
-};
-
-const themeDark = {
-    ...MD2DarkTheme,
-    colors: {
-        ...MD2DarkTheme.colors,
-        primary: '#D32F2F88',
-    }
-};
+import * as Themes from "./AppThemes";
 
 
 
 const App = () =>{
   
   return (
-    <PaperProvider theme={themeLight}>
+    <PaperProvider theme={Themes.defaultTheme}>
       <RootSiblingParent>
         <AppRouter />
       </RootSiblingParent>

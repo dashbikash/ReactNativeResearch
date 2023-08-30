@@ -33,7 +33,7 @@ export const BillInput = ({ route, navigation }: { route: any, navigation: any }
             <Card style={{marginTop:5}}>
                 <Card.Title title="Status" />
                 <Card.Content>
-                    <Picker dropdownIconColor={colors.primary} style={{ color: colors.primary }}
+                    <Picker  mode='dialog' dropdownIconColor={colors.primary} style={{ color: colors.primary }}
                         selectedValue={status}
                         onValueChange={(itemValue, itemIndex) =>
                             setStatus(itemValue)

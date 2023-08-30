@@ -47,7 +47,7 @@ const ItemSearchV2 = ({ navigation }: { navigation: any }) => {
           onChangeText={searchItems}
           onClearIconPress={() => { setViewItems(items) }}
           value={searchQuery}
-          style={{ margin: 5, borderColor: "silver",borderWidth:1,elevation:5 }}
+          style={{ margin: 5, borderColor: "gray",borderWidth:1,elevation:5 }}
         />
 
 
@@ -60,14 +60,14 @@ const ItemSearchV2 = ({ navigation }: { navigation: any }) => {
             data={viewItems}
             renderItem={({ item }) =>
 
-              <TouchableRipple borderless style={{ margin: 5, borderRadius: 5, elevation: 2 }} onPress={(e) => { navigation.navigate("Details", { item: item }) }} rippleColor="rgba(0, 0, 0, .25)">
+              <TouchableRipple borderless style={{ margin: 5, borderRadius: 12, elevation: 2 }} onPress={(e) => { navigation.navigate("Details", { item: item }) }} rippleColor="rgba(0, 0, 0, .25)">
                 <Card >
                   <Card.Content >
                     <>
                       <Text style={{ color: colors.primary, fontSize: 16, fontWeight: 'bold' }}>{item["name"] + " "}{item["alive"] ? (<Icon color="green" name='circle-check' />) : ('')}</Text>
                       <Text style={{ color: 'black', fontSize: 16 }}>{item["areaCode"]}</Text>
                       <Text style={{ color: 'gray', fontSize: 14 }}>{item["address"]}</Text>
-                      <Text style={{ color: 'magenta', fontSize: 10 }}>{new Date(item["updatedAt"]).toDateString()}</Text>
+                      <Text style={{ color: 'orange', fontSize: 10 }}>{new Date(item["updatedAt"]).toDateString()}</Text>
                     </>
                   </Card.Content>
                 </Card>

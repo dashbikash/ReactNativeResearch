@@ -1,15 +1,21 @@
 import React from 'react'
 import { View, } from 'react-native'
-import { Appbar, Text } from 'react-native-paper'
+import { Appbar, Card, Text } from 'react-native-paper'
+import AuthUser from '../models'
 
 const Account = ({navigation}:{navigation: any}) => {
-  const [user,setUser]=React.useState("Guest");
+  const dummyUser:AuthUser={username:"guest",fullname:"Guest",role:"anonymous",otherdata:{"address":"Bhubaneswar"}}
+  const [user,setUser]=React.useState(dummyUser);
   return (
     <View>
-      <Appbar.Header>
-        <Appbar.Content title={"Hey ! "+user} />
-    </Appbar.Header>
-      <Text>Account</Text>
+      <Card>
+        <Card.Content>
+          <Text style={{fontSize:20,fontWeight:'bold'}}>{"Hey ! "+user.fullname}</Text>
+        </Card.Content>
+        <Card.Content>
+          <Text style={{fontSize:16}}>{user.otherdata["address"]}</Text>
+        </Card.Content>
+      </Card>
     </View>
   )
 }

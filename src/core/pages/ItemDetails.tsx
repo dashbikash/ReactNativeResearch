@@ -20,7 +20,7 @@ const ItemDetails = ({ route, navigation }: { route: any, navigation: any }) => 
       margin: 16,
       right: 0,
       bottom: 0,
-      backgroundColor:colors.primary
+      backgroundColor: colors.primary,
     },
   });
 
@@ -50,7 +50,7 @@ const ItemDetails = ({ route, navigation }: { route: any, navigation: any }) => 
       <FAB
         icon="check"
         style={styles.fab}
-        label='Start Billing'
+        label='Proceed'
         onPress={() => navigation.navigate("Reading")}
       />
     </View>

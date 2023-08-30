@@ -1,11 +1,12 @@
 import * as React from "react";
 import { Image, View } from "react-native";
-import { Button, Card, TextInput } from "react-native-paper";
+import { Button, Card, TextInput, useTheme } from "react-native-paper";
 import AuthUser from "../models";
 import Toast from "react-native-root-toast";
 
 
 function SignIn({ navigation, route }: { navigation: any, route: any }) {
+  const {colors} =useTheme();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const { setUserToken } = route.params;
@@ -30,10 +31,10 @@ function SignIn({ navigation, route }: { navigation: any, route: any }) {
   }
 
   return (
-    <View style={{alignContent:"center"}}>
+    <View style={{alignContent:"center", backgroundColor:colors.background,height:'100%'}}>
 
       <Image style={{width: 70,height:70,marginTop:100,alignSelf:"center"}} source={require('../../assets/logo.png')}  />
-      <Card mode="elevated" style={{margin:20,padding:10}}>
+      <View style={{margin:20,padding:10}}>
         <TextInput
           mode="outlined"
           placeholder="Username"
@@ -52,7 +53,7 @@ function SignIn({ navigation, route }: { navigation: any, route: any }) {
           secureTextEntry          
         />
          <Button mode="contained" style={{marginTop:5}} onPress={signInOnPress} >Sign in</Button>
-      </Card>
+      </View>
 
      
     </View>

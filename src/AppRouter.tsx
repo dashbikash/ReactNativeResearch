@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {NavigationContainer,DefaultTheme} from '@react-navigation/native';
-import {  adaptNavigationTheme } from 'react-native-paper';
+import {  adaptNavigationTheme, useTheme } from 'react-native-paper';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {SplashScreen} from './core/components/components';
 import SignIn from './core/pages/SignIn';
@@ -11,21 +11,18 @@ import ItemDetails from './core/pages/ItemDetails';
 import { BillInput } from './billing/pages/BillInput';
 import ExperimentsPage from './experiment/ExperimentsPage';
 import { ConfirmInput } from './billing/pages/ConfirmInput';
+import HomeTabsV2 from './core/pages/HomeTabsV2';
 
 
 const Stack = createNativeStackNavigator();
 
-
-
-
-
-
 const AppRouter = () =>{
-  const MyTheme = {
+  const theme=useTheme()
+  const NavTheme = {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      primary: '#D32F2F',
+      primary: theme.colors.primary,
     },
   };
 
@@ -53,7 +50,7 @@ const AppRouter = () =>{
     return <SplashScreen />;
   }
   return (
-    <NavigationContainer theme={MyTheme}>
+    <NavigationContainer theme={NavTheme}>
       <Stack.Navigator>
         {userToken == null ? (
           // No token found, user isn't signed in

@@ -45,13 +45,8 @@ const ItemDetails = ({ route, navigation }: { route: any, navigation: any }) => 
           )
         })}
       </Card>
-      
-      <FAB
-        icon="check"
-        style={styles.fab}
-        label='Proceed'
-        onPress={() => navigation.navigate("Reading")}
-      />
+
+      <FAB icon="check" style={styles.fab} label='Proceed' onPress={() => navigation.navigate("Reading")} />
     </View>
   )
 }
